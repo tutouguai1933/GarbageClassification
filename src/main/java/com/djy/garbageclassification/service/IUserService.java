@@ -3,6 +3,8 @@ package com.djy.garbageclassification.service;
 import com.djy.garbageclassification.pojo.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 
+import java.util.List;
+
 /**
  * <p>
  *  服务类

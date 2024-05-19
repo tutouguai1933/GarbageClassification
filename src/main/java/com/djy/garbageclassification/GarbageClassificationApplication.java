@@ -4,7 +4,7 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages="com.djy.garbageclassification")
 @MapperScan("com.djy.garbageclassification.mapper")
 public class GarbageClassificationApplication {
 

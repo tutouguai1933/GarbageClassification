@@ -36,5 +36,5 @@ mybatis-plus:
   type-aliases-package: com.djy.garbageclassification.pojo
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-    map-underscore-to-camel-case: false
+    map-underscore-to-camel-case: true
   mapper-locations: classpath:com/djy/garbageclassification/mapper/*.xml
