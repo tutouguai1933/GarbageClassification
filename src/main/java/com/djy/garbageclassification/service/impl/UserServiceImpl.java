@@ -1,8 +1,8 @@
 package com.djy.garbageclassification.service.impl;
 
-import com.djy.garbageclassification.pojo.Users;
-import com.djy.garbageclassification.mapper.UsersMapper;
-import com.djy.garbageclassification.service.IUsersService;
+import com.djy.garbageclassification.pojo.User;
+import com.djy.garbageclassification.mapper.UserMapper;
+import com.djy.garbageclassification.service.IUserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2024-05-19
  */
 @Service
-public class UsersServiceImpl extends ServiceImpl<UsersMapper, Users> implements IUsersService {
+public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService {
 
 }

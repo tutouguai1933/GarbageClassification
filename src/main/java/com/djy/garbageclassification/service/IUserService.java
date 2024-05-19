@@ -1,6 +1,6 @@
 package com.djy.garbageclassification.service;
 
-import com.djy.garbageclassification.pojo.Users;
+import com.djy.garbageclassification.pojo.User;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author djy
  * @since 2024-05-19
  */
-public interface IUsersService extends IService<Users> {
+public interface IUserService extends IService<User> {
 
 }

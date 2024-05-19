@@ -12,7 +12,7 @@ import org.springframework.stereotype.Controller;
  * @since 2024-05-19
  */
 @Controller
-@RequestMapping("/attempts")
-public class AttemptsController {
+@RequestMapping("/attempt")
+public class AttemptController {
 
 }

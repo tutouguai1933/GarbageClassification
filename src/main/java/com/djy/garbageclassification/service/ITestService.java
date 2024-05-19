@@ -1,6 +1,6 @@
 package com.djy.garbageclassification.service;
 
-import com.djy.garbageclassification.pojo.Tests;
+import com.djy.garbageclassification.pojo.Test;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author djy
  * @since 2024-05-19
  */
-public interface ITestsService extends IService<Tests> {
+public interface ITestService extends IService<Test> {
 
 }

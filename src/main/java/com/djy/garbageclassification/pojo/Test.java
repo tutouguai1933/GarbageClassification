@@ -3,6 +3,7 @@ package com.djy.garbageclassification.pojo;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Getter;
@@ -18,19 +19,19 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-@ApiModel(value = "Attempts对象", description = "")
-public class Attempts implements Serializable {
+@ApiModel(value = "Test对象", description = "")
+public class Test implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId(value = "attempt_id", type = IdType.AUTO)
-    private Integer attemptId;
-
+    @TableId(value = "test_id", type = IdType.AUTO)
     private Integer testId;
 
-    private String trashType;
+    private Integer userId;
 
-    private String choice;
+    private LocalDateTime date;
 
-    private Boolean isCorrect;
+    private Double correctRate;
+
+    private String mode;
 }

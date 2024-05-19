@@ -1,6 +1,6 @@
 package com.djy.garbageclassification.mapper;
 
-import com.djy.garbageclassification.pojo.Attempts;
+import com.djy.garbageclassification.pojo.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author djy
  * @since 2024-05-19
  */
-public interface AttemptsMapper extends BaseMapper<Attempts> {
+public interface UserMapper extends BaseMapper<User> {
 
 }

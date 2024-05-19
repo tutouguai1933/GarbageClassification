@@ -40,16 +40,4 @@ public class AutoGenerator {
     }
 
 
-//    public static void main(String[] args){
-//        try{
-//            Class.forName("com.mysql.jdbc.Driver");
-//            Connection conn  = DriverManager.getConnection("jdbc:mysql://localhost:3306/garbage_sorting","root","1933");
-//            System.out.println(conn);
-//        } catch (ClassNotFoundException e) {
-//            e.printStackTrace();
-//        } catch (SQLException e) {
-//            e.printStackTrace();
-//        }
-//    }
-
 }

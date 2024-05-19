@@ -18,13 +18,19 @@ import lombok.Setter;
  */
 @Getter
 @Setter
-@ApiModel(value = "Users对象", description = "")
-public class Users implements Serializable {
+@ApiModel(value = "Attempt对象", description = "")
+public class Attempt implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    @TableId(value = "user_id", type = IdType.AUTO)
-    private Integer userId;
+    @TableId(value = "attempt_id", type = IdType.AUTO)
+    private Integer attemptId;
 
-    private String username;
+    private Integer testId;
+
+    private String trashType;
+
+    private String choice;
+
+    private Boolean isCorrect;
 }
