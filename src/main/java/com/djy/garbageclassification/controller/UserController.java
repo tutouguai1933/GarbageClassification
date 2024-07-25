@@ -1,5 +1,6 @@
 package com.djy.garbageclassification.controller;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.djy.garbageclassification.common.Result;
 import com.djy.garbageclassification.pojo.User;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.stereotype.Controller;
 
+import javax.management.Query;
 import java.util.List;
 
 /**
@@ -19,7 +21,7 @@ import java.util.List;
  * @since 2024-05-19
  */
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/user")
 public class UserController {
 
     @Autowired
@@ -47,6 +49,27 @@ public class UserController {
             return Result.success();
         } else {
             return Result.error("500", "无法添加用户");
+        }
+    }
+
+    @PostMapping("/login")
+    public Result<Integer> login(@RequestBody User user) {
+        String username = user.getUsername();
+        QueryWrapper<User> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("username", username);
+        User existingUser = userService.getOne(queryWrapper);
+
+        if (existingUser != null) {
+            // 用户已经存在，返回用户的ID
+            return Result.success(existingUser.getUserId());
+        } else {
+            // 用户不存在，创建新用户
+            boolean success = userService.save(user);
+            if (success) {
+                return Result.success(user.getUserId());
+            } else {
+                return Result.error("500", "无法创建用户");
+            }
         }
     }
 }

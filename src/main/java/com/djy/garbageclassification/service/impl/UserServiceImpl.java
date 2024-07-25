@@ -1,5 +1,6 @@
 package com.djy.garbageclassification.service.impl;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.djy.garbageclassification.pojo.User;
 import com.djy.garbageclassification.mapper.UserMapper;
 import com.djy.garbageclassification.service.IUserService;
@@ -10,7 +11,7 @@ import java.util.List;
 
 /**
  * <p>
- *  服务实现类
+ * 服务实现类
  * </p>
  *
  * @author djy
@@ -18,4 +19,5 @@ import java.util.List;
  */
 @Service
 public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements IUserService {
+
 }

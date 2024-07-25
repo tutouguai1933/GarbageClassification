@@ -3,6 +3,7 @@ package com.djy.garbageclassification.controller;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.djy.garbageclassification.common.Result;
 import com.djy.garbageclassification.pojo.Attempt;
+import com.djy.garbageclassification.pojo.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.stereotype.Controller;
@@ -11,18 +12,21 @@ import java.util.List;
 
 /**
  * <p>
- *  前端控制器
+ * 前端控制器
  * </p>
  *
  * @author djy
  * @since 2024-05-19
  */
 @RestController
-@RequestMapping("/attempts")
+@RequestMapping("/attempt")
 public class AttemptController {
 
     @Autowired
     private IService<Attempt> attemptService;
+
+    @Autowired
+    private IService<Test> testIService;
 
     @GetMapping("/getAllAttempts")
     public Result<List<Attempt>> getAllAttempts() {
@@ -43,7 +47,15 @@ public class AttemptController {
     public Result<?> addAttempt(@RequestBody Attempt attempt) {
         boolean success = attemptService.save(attempt);
         if (success) {
-            return Result.success();
+            List<Attempt> list = attemptService.lambdaQuery().eq(Attempt::getTestId, attempt.getTestId()).list();
+            int correctNum = 0;
+            for (Attempt item : list){
+                correctNum += item.getIsCorrect()?1:0;
+            }
+            Test test = testIService.getById(attempt.getTestId());
+            test.setCorrectRate(1.0*correctNum/list.size());
+            testIService.updateById(test);
+            return Result.success(attempt.getAttemptId());
         } else {
             return Result.error("500", "无法添加尝试");
         }

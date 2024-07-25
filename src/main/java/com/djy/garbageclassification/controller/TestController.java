@@ -18,7 +18,7 @@ import java.util.List;
  * @since 2024-05-19
  */
 @RestController
-@RequestMapping("/tests")
+@RequestMapping("/test")
 public class TestController {
 
     @Autowired
@@ -43,7 +43,7 @@ public class TestController {
     public Result<?> addTest(@RequestBody Test test) {
         boolean success = testService.save(test);
         if (success) {
-            return Result.success();
+            return Result.success(test.getTestId());
         } else {
             return Result.error("500", "无法添加测试");
         }
